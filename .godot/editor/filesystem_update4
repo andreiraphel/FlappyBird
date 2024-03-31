@@ -4,3 +4,5 @@ res://player.gd
 res://Pipes.gd
 res://pipenode.tscn
 res://world.tscn
+res://floor.tscn
+res://Floor.gd
