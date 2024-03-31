@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://clnashij3gu0x"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_j4rur"]
+[ext_resource type="Texture2D" uid="uid://dy26norege4ik" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-downflap.png" id="1_tx1wc"]
+[ext_resource type="Texture2D" uid="uid://i3vwtw7twmtm" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-midflap.png" id="2_uo6oh"]
+[ext_resource type="Texture2D" uid="uid://d3i2hiwi6hgsq" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-upflap.png" id="3_c75je"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmjdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tx1wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uo6oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c75je")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5mjd"]
+radius = 26.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4cw0"]
+radius = 28.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_j4rur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_jmjdr")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_k5mjd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y4cw0")
