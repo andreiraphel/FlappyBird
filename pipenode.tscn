@@ -15,6 +15,7 @@ size = Vector2(22, 111)
 [node name="Pipenode" type="Node2D"]
 
 [node name="Pipes" type="StaticBody2D" parent="."]
+scale = Vector2(2, 2)
 script = ExtResource("1_ywcv2")
 
 [node name="UpperPipe" type="Sprite2D" parent="Pipes"]

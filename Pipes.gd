@@ -7,4 +7,4 @@ func _ready():
 
 
 func _process(delta):
-	position += Vector2(2,0)
+	position += Vector2(-2,0)
