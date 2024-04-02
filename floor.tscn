@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuo06jh6acq8o"]
+[gd_scene load_steps=4 format=3 uid="uid://cuo06jh6acq8o"]
 
 [ext_resource type="Script" path="res://Floor.gd" id="1_65pw7"]
 [ext_resource type="Texture2D" uid="uid://dx30pbg4ihlxh" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/base.png" id="1_qou5h"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8voy"]
+size = Vector2(464, 152)
+
 [node name="Floor" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+scale = Vector2(1.27, 1.27)
 script = ExtResource("1_65pw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(1.36, 1.36)
 texture = ExtResource("1_qou5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_j8voy")

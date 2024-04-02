@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = jump_velocity
 		if rotation_degrees > -40:
-			rotate(-1.5)
+			set_rotation(-0.8)
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

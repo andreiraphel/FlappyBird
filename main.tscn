@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctd5fl83aaeq7"]
+[gd_scene load_steps=5 format=3 uid="uid://ctd5fl83aaeq7"]
 
 [ext_resource type="PackedScene" uid="uid://clnashij3gu0x" path="res://player.tscn" id="1_47jja"]
 [ext_resource type="Script" path="res://main.gd" id="1_wryce"]
-[ext_resource type="PackedScene" uid="uid://dldla3mrnrvqt" path="res://pipenode.tscn" id="2_g1jmc"]
 [ext_resource type="PackedScene" uid="uid://cuo06jh6acq8o" path="res://floor.tscn" id="3_f0gpq"]
 [ext_resource type="Texture2D" uid="uid://d2tahk83xxaah" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/background-day.png" id="4_xkbsq"]
 
@@ -15,19 +14,7 @@ texture = ExtResource("4_xkbsq")
 
 [node name="Player" parent="." instance=ExtResource("1_47jja")]
 
-[node name="Pipenode" parent="." instance=ExtResource("2_g1jmc")]
-position = Vector2(192, 0)
-
-[node name="Pipenode2" parent="." instance=ExtResource("2_g1jmc")]
-position = Vector2(512, -64)
-
-[node name="Pipenode3" parent="." instance=ExtResource("2_g1jmc")]
-position = Vector2(832, 64)
-
-[node name="Pipenode4" parent="." instance=ExtResource("2_g1jmc")]
-position = Vector2(1152, -96)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Floor" parent="." instance=ExtResource("3_f0gpq")]
-position = Vector2(0, 350)
+position = Vector2(0, 376)
