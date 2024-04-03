@@ -17,4 +17,10 @@ texture = ExtResource("4_xkbsq")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Floor" parent="." instance=ExtResource("3_f0gpq")]
-position = Vector2(0, 376)
+position = Vector2(-48, 360)
+
+[node name="Floor2" parent="." instance=ExtResource("3_f0gpq")]
+position = Vector2(492, 360)
+
+[node name="Floor3" parent="." instance=ExtResource("3_f0gpq")]
+position = Vector2(948, 360)
