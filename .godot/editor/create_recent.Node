@@ -1,7 +1,10 @@
-Camera2D
-ColorRect
+Timer
+Label
+CanvasLayer
 CollisionShape2D
 Area2D
+Camera2D
+ColorRect
 AnimatedSprite2D
 Sprite2D
 StaticBody2D
