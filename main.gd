@@ -38,4 +38,4 @@ func spawn_floor():
 	var new_floor = floor_asset.instantiate()
 	add_child(new_floor)
 	
-	new_floor.position = Vector2(786, 360)
+	new_floor.position = Vector2(770, 360)
