@@ -6,6 +6,6 @@ func _ready():
 func _process(delta):
 	position += Vector2(-2,0)
 
-func _on_score_body_exited(body):
+func _on_score_body_entered(body):
 	if body.has_method("add_score"):
 		body.add_score()

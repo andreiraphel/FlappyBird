@@ -26,4 +26,4 @@ func _physics_process(delta):
 
 func add_score():
 	score += 1
-	print(score)
+	$HUD.update_score(score)
