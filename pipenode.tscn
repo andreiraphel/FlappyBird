@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dldla3mrnrvqt"]
+[gd_scene load_steps=5 format=3 uid="uid://dldla3mrnrvqt"]
 
 [ext_resource type="Script" path="res://Pipes.gd" id="1_ywcv2"]
 [ext_resource type="Texture2D" uid="uid://bna1gck255a25" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/pipe-green.png" id="2_5uygr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fhi"]
 size = Vector2(48, 319)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yaxe7"]
-polygon = PackedVector2Array(-24, -360, -24, -41, 24, -41, 24, -360)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c1ke"]
 size = Vector2(22, 111)
@@ -27,9 +24,6 @@ texture = ExtResource("2_5uygr")
 position = Vector2(0, -200.5)
 shape = SubResource("RectangleShape2D_a3fhi")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Pipes"]
-occluder = SubResource("OccluderPolygon2D_yaxe7")
-
 [node name="LowerPipe" type="Sprite2D" parent="Pipes"]
 position = Vector2(0, 200)
 texture = ExtResource("2_5uygr")
@@ -38,12 +32,10 @@ texture = ExtResource("2_5uygr")
 position = Vector2(0, 200.5)
 shape = SubResource("RectangleShape2D_a3fhi")
 
-[node name="LowerLightOccluder2D" type="LightOccluder2D" parent="Pipes"]
-position = Vector2(0, 400)
-occluder = SubResource("OccluderPolygon2D_yaxe7")
+[node name="Score" type="Area2D" parent="Pipes"]
 
-[node name="Area2D" type="Area2D" parent="Pipes"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/Score"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_7c1ke")
+
+[connection signal="body_exited" from="Pipes/Score" to="Pipes" method="_on_score_body_exited"]
