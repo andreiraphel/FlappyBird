@@ -38,4 +38,4 @@ shape = SubResource("RectangleShape2D_a3fhi")
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_7c1ke")
 
-[connection signal="body_exited" from="Pipes/Score" to="Pipes" method="_on_score_body_exited"]
+[connection signal="body_entered" from="Pipes/Score" to="Pipes" method="_on_score_body_entered"]

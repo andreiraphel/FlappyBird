@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctd5fl83aaeq7"]
+[gd_scene load_steps=6 format=3 uid="uid://ctd5fl83aaeq7"]
 
 [ext_resource type="PackedScene" uid="uid://clnashij3gu0x" path="res://player.tscn" id="1_47jja"]
 [ext_resource type="Script" path="res://main.gd" id="1_wryce"]
-[ext_resource type="PackedScene" uid="uid://c6ddu2ungha63" path="res://hud.tscn" id="2_h5min"]
 [ext_resource type="PackedScene" uid="uid://cuo06jh6acq8o" path="res://floor.tscn" id="3_f0gpq"]
 [ext_resource type="Texture2D" uid="uid://d2tahk83xxaah" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/background-day.png" id="4_xkbsq"]
 
@@ -26,8 +25,6 @@ texture = ExtResource("4_xkbsq")
 position = Vector2(-464, 8)
 shape = SubResource("RectangleShape2D_fo0y1")
 debug_color = Color(0, 1, 1, 0.721569)
-
-[node name="HUD" parent="." instance=ExtResource("2_h5min")]
 
 [node name="Floor" parent="." instance=ExtResource("3_f0gpq")]
 position = Vector2(-240, 392)
