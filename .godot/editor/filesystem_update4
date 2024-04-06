@@ -1,10 +1,6 @@
-res://main.tscn
-res://main.gd
 res://hud.tscn
 res://floor.tscn
 res://player.tscn
 res://pipenode.tscn
-res://floor.gd
-res://hud.gd
-res://Pipes.gd
+res://main.tscn
 res://player.gd
