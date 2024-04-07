@@ -9,3 +9,11 @@ func _process(delta):
 func _on_score_body_entered(body):
 	if body.has_method("add_score"):
 		body.add_score()
+
+func _on_upper_body_entered(body):
+	if body.has_method("died"):
+		body.died()
+
+func _on_lower_body_entered(body):
+	if body.has_method("died"):
+		body.died()
