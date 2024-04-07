@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
-
 @export var speed = 300.0
 @export var jump_velocity = -400.0
 
 var gravity = 1300
 var score = 0
 var is_alive = true
+var start = false
 
 func _physics_process(delta):
-	if is_alive:
+	if is_alive && start:
+		play_game()
 		$AnimatedSprite2D.play("fly")
 		velocity.y += gravity * delta
 		
@@ -32,3 +33,6 @@ func add_score():
 func died():
 	is_alive = false
 	$AnimatedSprite2D.stop()
+
+func play_game():
+	start = true

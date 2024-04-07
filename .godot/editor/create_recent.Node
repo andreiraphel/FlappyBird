@@ -1,5 +1,6 @@
-Area2D
+Button
 CollisionShape2D
+Area2D
 AnimationPlayer
 Timer
 Label

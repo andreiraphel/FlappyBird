@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var is_moving = false
 func _ready():
 	pass # Replace with function body.
 
@@ -17,3 +18,6 @@ func _on_upper_body_entered(body):
 func _on_lower_body_entered(body):
 	if body.has_method("died"):
 		body.died()
+
+func start_pipe():
+	is_moving = true

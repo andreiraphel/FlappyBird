@@ -6,35 +6,33 @@ var floor_asset = preload("res://floor.tscn")
 var pipe_interval = 0
 const INTERVAL = 1.2
 const RANGE = 128.0
-var spawned_pipes = []
-var i = 0
 var score = 0
+var game_start = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	$Floor/StaticBody2D/AnimationPlayer.stop()
+
 func _process(delta):
-	pipe_interval += delta
 	
-	if pipe_interval >= INTERVAL:
-		spawn_pipe()
-		pipe_interval = 0
+	if Input.is_action_just_pressed("ui_accept"):
+		game_start = true
+		
+	if game_start:
+		pipe_interval += delta
+		$Floor/StaticBody2D/AnimationPlayer.play()
+		$Player.play_game()
 	
+		if pipe_interval >= INTERVAL:
+			spawn_pipe()
+			pipe_interval = 0
 
 func spawn_pipe():
 	var new_pipe = pipe.instantiate()
 	add_child(new_pipe)
 	
 	new_pipe.position = Vector2(300,randf_range(RANGE,-RANGE))
-	spawned_pipes.append(new_pipe)
 	
-
-func _on_area_2d_area_entered(area):
-	if spawned_pipes.size() >= 0:
-		spawned_pipes[i].queue_free()
-		i += 1
-
 
 func _on_floor_coll_body_entered(body):
 	if body.has_method("died"):
