@@ -21,7 +21,7 @@ func _process(delta):
 		spawn_pipe()
 		pipe_interval = 0
 	
-		
+
 func spawn_pipe():
 	var new_pipe = pipe.instantiate()
 	add_child(new_pipe)
@@ -29,6 +29,13 @@ func spawn_pipe():
 	new_pipe.position = Vector2(300,randf_range(RANGE,-RANGE))
 	spawned_pipes.append(new_pipe)
 	
+
 func _on_area_2d_area_entered(area):
-	spawned_pipes[i].queue_free()
-	i += 1
+	if spawned_pipes.size() >= 0:
+		spawned_pipes[i].queue_free()
+		i += 1
+
+
+func _on_floor_coll_body_entered(body):
+	if body.has_method("died"):
+		body.died()

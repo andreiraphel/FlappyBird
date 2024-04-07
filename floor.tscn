@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuo06jh6acq8o"]
+[gd_scene load_steps=7 format=3 uid="uid://cuo06jh6acq8o"]
 
 [ext_resource type="Texture2D" uid="uid://dx30pbg4ihlxh" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/base.png" id="1_qou5h"]
 
@@ -43,6 +43,9 @@ _data = {
 "floor": SubResource("Animation_wr41y")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73iah"]
+size = Vector2(384.252, 79.2914)
+
 [node name="Floor" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -65,3 +68,10 @@ libraries = {
 "": SubResource("AnimationLibrary_mc4vx")
 }
 autoplay = "floor"
+
+[node name="FloorColl" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/FloorColl"]
+position = Vector2(-42.52, -33.936)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_73iah")

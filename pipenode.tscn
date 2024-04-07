@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bna1gck255a25" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/pipe-green.png" id="2_5uygr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fhi"]
-size = Vector2(48, 319)
+size = Vector2(48, 320.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c1ke"]
 size = Vector2(22, 111)
@@ -29,7 +29,7 @@ position = Vector2(0, 200)
 texture = ExtResource("2_5uygr")
 
 [node name="LowerPipeColl" type="CollisionShape2D" parent="Pipes"]
-position = Vector2(0, 200.5)
+position = Vector2(0, 200.75)
 shape = SubResource("RectangleShape2D_a3fhi")
 
 [node name="Score" type="Area2D" parent="Pipes"]
@@ -38,4 +38,18 @@ shape = SubResource("RectangleShape2D_a3fhi")
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_7c1ke")
 
+[node name="Upper" type="Area2D" parent="Pipes"]
+
+[node name="UpperPipeColl" type="CollisionShape2D" parent="Pipes/Upper"]
+position = Vector2(0, -200)
+shape = SubResource("RectangleShape2D_a3fhi")
+
+[node name="Lower" type="Area2D" parent="Pipes"]
+
+[node name="LowerPipeColl" type="CollisionShape2D" parent="Pipes/Lower"]
+position = Vector2(0, 200)
+shape = SubResource("RectangleShape2D_a3fhi")
+
 [connection signal="body_entered" from="Pipes/Score" to="Pipes" method="_on_score_body_entered"]
+[connection signal="body_entered" from="Pipes/Upper" to="Pipes" method="_on_upper_body_entered"]
+[connection signal="body_entered" from="Pipes/Lower" to="Pipes" method="_on_lower_body_entered"]
