@@ -1,7 +1,8 @@
-Button
+AnimationPlayer
+StaticBody2D
 CollisionShape2D
 Area2D
-AnimationPlayer
+Button
 Timer
 Label
 CanvasLayer
@@ -9,7 +10,5 @@ Camera2D
 ColorRect
 AnimatedSprite2D
 Sprite2D
-StaticBody2D
 LightOccluder2D
 Node
-CharacterBody2D

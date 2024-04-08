@@ -8,24 +8,28 @@ const INTERVAL = 1.2
 const RANGE = 128.0
 var score = 0
 var game_start = false
+var main_game_over = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	$Floor/StaticBody2D/AnimationPlayer.stop()
+	$floor/AnimationPlayer.stop()
 
 func _process(delta):
-	
 	if Input.is_action_just_pressed("ui_accept"):
 		game_start = true
 		
-	if game_start:
+	if game_start && $Player.is_alive:
 		pipe_interval += delta
-		$Floor/StaticBody2D/AnimationPlayer.play()
+		$floor/AnimationPlayer.play()
 		$Player.play_game()
 	
 		if pipe_interval >= INTERVAL:
 			spawn_pipe()
 			pipe_interval = 0
+	
+	if !$Player.is_alive:
+		$floor/AnimationPlayer.pause()
+	
 
 func spawn_pipe():
 	var new_pipe = pipe.instantiate()
