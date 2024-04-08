@@ -16,9 +16,4 @@ texture = ExtResource("4_xkbsq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Floor" parent="." instance=ExtResource("3_f0gpq")]
-position = Vector2(-240, 392)
-
-[connection signal="body_entered" from="Floor/StaticBody2D/FloorColl" to="." method="_on_floor_coll_body_entered"]
-
-[editable path="Floor"]
+[node name="floor" parent="." instance=ExtResource("3_f0gpq")]
