@@ -24,13 +24,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k5mjd"]
-radius = 29.0
-height = 58.0
+radius = 21.0
+height = 52.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y4cw0"]
-radius = 29.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k53hk"]
+radius = 22.0
+height = 54.0
 
 [node name="Player" type="CharacterBody2D"]
+top_level = true
 script = ExtResource("1_j4rur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -39,11 +41,13 @@ sprite_frames = SubResource("SpriteFrames_jmjdr")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k5mjd")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_y4cw0")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_k53hk")
 
 [node name="HUD" parent="." instance=ExtResource("5_y2d2r")]
