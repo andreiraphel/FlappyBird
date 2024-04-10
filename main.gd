@@ -6,9 +6,7 @@ var floor_asset = preload("res://floor.tscn")
 var pipe_interval = 0
 const INTERVAL = 1.2
 const RANGE = 128.0
-var score = 0
 var game_start = false
-var spawned_pipes = []
 
 
 func _ready():
