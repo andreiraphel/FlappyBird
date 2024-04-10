@@ -3,4 +3,5 @@ res://hud.tscn
 res://player.tscn
 res://pipenode.tscn
 res://main.tscn
+res://Pipes.gd
 res://main.gd
