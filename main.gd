@@ -8,7 +8,7 @@ const INTERVAL = 1.2
 const RANGE = 128.0
 var score = 0
 var game_start = false
-var main_game_over = false
+var spawned_pipes = []
 
 
 func _ready():
@@ -28,13 +28,12 @@ func _process(delta):
 			pipe_interval = 0
 	
 	if !$Player.is_alive:
-		$floor/AnimationPlayer.pause()
+		$floor/AnimationPlayer.stop(false)
 	
 
 func spawn_pipe():
 	var new_pipe = pipe.instantiate()
 	add_child(new_pipe)
-	
 	new_pipe.position = Vector2(300,randf_range(RANGE,-RANGE))
 	
 

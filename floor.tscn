@@ -8,6 +8,21 @@ size = Vector2(671.818, 81.3002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_geeah"]
 size = Vector2(856, 192)
 
+[sub_resource type="Animation" id="Animation_ochmf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_4uv65"]
 resource_name = "floor_animation"
 length = 1.35
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(112, 0), Vector2(-248, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ochmf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(112, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yiaa"]
@@ -61,7 +61,6 @@ scale = Vector2(1.27, 1.27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorColl"]
 position = Vector2(101.263, -34.9404)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wq7mn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
