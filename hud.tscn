@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6ddu2ungha63"]
+[gd_scene load_steps=6 format=3 uid="uid://c6ddu2ungha63"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_nokfd"]
+[ext_resource type="FontFile" uid="uid://cgujocjs8pqn6" path="res://flappy-bird-assets-master/flappy-bird-assets-master/flappybirdy/FlappyBirdy.ttf" id="2_euiov"]
+[ext_resource type="Texture2D" uid="uid://bfdngf6uc5nu5" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/message.png" id="2_wnufa"]
+[ext_resource type="Texture2D" uid="uid://cxxyhfyrhin0s" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/gameover.png" id="3_bmwxk"]
+[ext_resource type="AudioStream" uid="uid://cx81rpak8vv6q" path="res://flappy-bird-assets-master/flappy-bird-assets-master/audio/point.wav" id="5_347f3"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_nokfd")
@@ -9,29 +13,53 @@ script = ExtResource("1_nokfd")
 top_level = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -964.0
-offset_top = -182.0
-offset_right = -964.0
-offset_bottom = -87.0
+offset_left = 220.0
+offset_top = 33.0
+offset_right = -254.0
+offset_bottom = 47.0
 grow_horizontal = 2
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_euiov")
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FinalScore" type="Label" parent="."]
 visible = false
-top_level = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -964.0
-offset_top = -182.0
-offset_right = -964.0
-offset_bottom = -87.0
+offset_left = 208.0
+offset_top = 17.0
+offset_right = -256.0
+offset_bottom = 39.0
 grow_horizontal = 2
 scale = Vector2(5, 5)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_euiov")
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartUI" type="Sprite2D" parent="."]
+position = Vector2(245, 299)
+scale = Vector2(2.02717, 1.98937)
+texture = ExtResource("2_wnufa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(243, 275)
+scale = Vector2(2.07143, 2.07143)
+texture = ExtResource("3_bmwxk")
+
+[node name="point" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_347f3")
+volume_db = -15.848

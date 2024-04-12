@@ -2,6 +2,7 @@ extends Node2D
 
 var pipe = preload("res://pipenode.tscn")
 var floor_asset = preload("res://floor.tscn")
+var hud = preload("res://hud.tscn")
 
 var pipe_interval = 0
 const INTERVAL = 1.2
@@ -27,6 +28,7 @@ func _process(delta):
 	
 	if !$Player.is_alive:
 		$floor/AnimationPlayer.stop(false)
+		$Player/HUD/Sprite2D.visible = true
 	
 
 func spawn_pipe():

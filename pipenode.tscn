@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Pipes.gd" id="1_ywcv2"]
 [ext_resource type="Texture2D" uid="uid://bna1gck255a25" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/pipe-green.png" id="2_5uygr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fhi"]
-size = Vector2(48, 320.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7c1ke"]
 size = Vector2(22, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fhi"]
+size = Vector2(48, 320.5)
 
 [node name="Pipenode" type="Node2D"]
 
@@ -20,17 +20,9 @@ position = Vector2(0, -200)
 rotation = 3.14159
 texture = ExtResource("2_5uygr")
 
-[node name="UpperPipeColl" type="CollisionShape2D" parent="Pipes"]
-position = Vector2(0, -200.5)
-shape = SubResource("RectangleShape2D_a3fhi")
-
 [node name="LowerPipe" type="Sprite2D" parent="Pipes"]
 position = Vector2(0, 200)
 texture = ExtResource("2_5uygr")
-
-[node name="LowerPipeColl" type="CollisionShape2D" parent="Pipes"]
-position = Vector2(0, 200.75)
-shape = SubResource("RectangleShape2D_a3fhi")
 
 [node name="Score" type="Area2D" parent="Pipes"]
 
