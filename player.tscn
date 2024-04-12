@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://clnashij3gu0x"]
+[gd_scene load_steps=11 format=3 uid="uid://clnashij3gu0x"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_j4rur"]
 [ext_resource type="Texture2D" uid="uid://dy26norege4ik" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-downflap.png" id="1_tx1wc"]
 [ext_resource type="Texture2D" uid="uid://i3vwtw7twmtm" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-midflap.png" id="2_uo6oh"]
 [ext_resource type="Texture2D" uid="uid://d3i2hiwi6hgsq" path="res://flappy-bird-assets-master/flappy-bird-assets-master/sprites/yellowbird-upflap.png" id="3_c75je"]
 [ext_resource type="PackedScene" uid="uid://c6ddu2ungha63" path="res://hud.tscn" id="5_y2d2r"]
+[ext_resource type="AudioStream" uid="uid://d3go2y4e3n4yt" path="res://flappy-bird-assets-master/flappy-bird-assets-master/audio/wing.wav" id="6_txchk"]
+[ext_resource type="AudioStream" uid="uid://b2b2a5xywl2s" path="res://flappy-bird-assets-master/flappy-bird-assets-master/audio/hit.wav" id="7_jl31c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmjdr"]
 animations = [{
@@ -51,3 +53,11 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_k53hk")
 
 [node name="HUD" parent="." instance=ExtResource("5_y2d2r")]
+
+[node name="flap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_txchk")
+volume_db = -15.62
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jl31c")
+volume_db = -16.878
