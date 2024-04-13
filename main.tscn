@@ -18,3 +18,5 @@ position = Vector2(4, 34)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="floor" parent="." instance=ExtResource("3_f0gpq")]
+
+[connection signal="input_event" from="Player" to="." method="_on_player_input_event"]
