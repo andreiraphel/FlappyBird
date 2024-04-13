@@ -24,7 +24,7 @@ func _physics_process(delta):
 				rotate(0.05)
 		
 		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_velocity
 			$flap.play()
 			if rotation_degrees > -40:
@@ -49,3 +49,14 @@ func died():
 func play_game():
 	start = true
 	
+func reset():
+	score = 0
+	is_alive = true
+	start = false
+	final_score = 0
+	velocity = Vector2.ZERO
+	set_position(Vector2.ZERO)
+	set_rotation(0)
+	$HUD.update_score(score)
+	$HUD.final_score()
+	$HUD/FinalScore.visible = false
